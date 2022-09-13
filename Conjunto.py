@@ -1,19 +1,22 @@
-class Conjunto():  # criando a classe conjunto
+class Conjunto(): 
     elementos: list = []
 
     def __init__(self, elementos=[]) -> None:
         self.elementos = elementos
 
-    def verElementos(self) -> None:
+    def __str__(self) -> str:
         if len(self.elementos) > 0:
             ret = "{"
             for elemento in self.elementos:
                 ret += str(elemento) + ","
             ret = ret[:-1]
             ret += "}"
-            print(ret)
+            return ret
         else:
-            print("{} - CONJUNTO VAZIO")
+            return "{} - CONJUNTO VAZIO"
+
+    def __eq__(self, conjunto) -> bool:
+        return self.__isEqual(conjunto)
 
     def possui(self, elemento) -> bool:  # Pertinência
         if elemento in self.elementos:
@@ -28,7 +31,7 @@ class Conjunto():  # criando a classe conjunto
                 return False
         return True
 
-    def isEqual(self, conjunto) -> bool:  # Igualdade
+    def __isEqual(self, conjunto) -> bool:  # Igualdade
         if self.isSubconjunto(conjunto) and conjunto.isSubconjunto(self):
             return True
         return False

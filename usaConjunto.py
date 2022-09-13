@@ -1,6 +1,6 @@
 from Conjunto import *
 # CRIANDO CONJUNTOS
-A = Conjunto([7, 8])
+A = Conjunto([8, 7])
 B = Conjunto([0, 1, 2])
 C = Conjunto([2, 1, 0, 3])
 D = Conjunto()
@@ -8,11 +8,11 @@ E = Conjunto([7, 8])
 
 
 def testaVerElementos():
-    A.verElementos()
-    B.verElementos()
-    C.verElementos()
-    D.verElementos()
-    E.verElementos()
+    print(A)
+    print(B)
+    print(C)
+    print(D)
+    print(E)
     print('-'*50)
 
 
@@ -31,28 +31,28 @@ def testaSubconjuntos():
 
 
 def testaIgualdade():
-    print(f'O Conjunto A é igual ao E? {A.isEqual(E)}')
-    print(f'O Conjunto A é igual ao B? {A.isEqual(B)}')
+    print(f'O Conjunto A é igual ao E? {A == E}')
+    print(f'O Conjunto A é igual ao B? {A == B}')
     print('-'*50)
 
 
 def testaUniao():
     print('Conjunto A')
-    A.verElementos()
+    print(A)
     print('Conjunto B')
-    B.verElementos()
+    print(B)
     print('A união entre o Conjunto A e o Conjunto B é')
-    uniao(A, B).verElementos()
+    print(uniao(A, B))
     print('-'*50)
 
 
 def testaIntersecao():
     print('Conjunto B')
-    B.verElementos()
+    print(B)
     print('Conjunto C')
-    C.verElementos()
+    print(C)
     print('A intersecao entre o Conjunto B e o Conjunto C é')
-    intersecao(B, C).verElementos()
+    print(intersecao(B, C))
     print('-'*50)
 
 
