@@ -6,7 +6,7 @@ class Conjunto:
             raise ValueError('Passe apenas listas como parâmetro do conjunto')
 
     @property
-    def elementos(self):
+    def elementos(self) -> list:
         return self.__elementos
 
     def __str__(self) -> str:
@@ -23,7 +23,13 @@ class Conjunto:
     def __getitem__(self, posicao):
         return self.__elementos[posicao]
 
-    def __len__(self):
+    def __iter__(self):
+        i = 0
+        while i < len(self.elementos):
+            yield self.elementos[i]
+            i += 1
+
+    def __len__(self) -> int:
         return len(self.__elementos)
 
     def __eq__(self, conjunto) -> bool:  # igualdade usando '=='
@@ -57,11 +63,11 @@ class Conjunto:
 def uniao(a, b) -> Conjunto:  # união usando função
     retornoUniao = []
 
-    for elemento in a.elementos:
+    for elemento in a:
         if elemento not in retornoUniao:
             retornoUniao.append(elemento)
 
-    for elemento in b.elementos:
+    for elemento in b:
         if elemento not in retornoUniao:
             retornoUniao.append(elemento)
 
@@ -70,15 +76,15 @@ def uniao(a, b) -> Conjunto:  # união usando função
 
 def intersecao(a, b) -> Conjunto:  # Interseção
     retornoIntersecao = []
-    for elemento in a.elementos:
-        if elemento in b.elementos:
+    for elemento in a:
+        if elemento in b:
             retornoIntersecao.append(elemento)
     return Conjunto(retornoIntersecao)
 
 
 def diferenca(a, b) -> Conjunto:  # diferenca usando função
     retornoDiferenca = []
-    for elemento in a.elementos:
+    for elemento in a:
         if not b.possui(elemento):
             retornoDiferenca.append(elemento)
     return Conjunto(retornoDiferenca)
