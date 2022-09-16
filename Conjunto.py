@@ -1,5 +1,5 @@
 class Conjunto:
-    def __init__(self, elementos: list = []) -> None:
+    def __init__(self, elementos: list = []) -> None:  # usar args pra aceitar
         self.__elementos = elementos
 
         if not isinstance(elementos, list):
@@ -92,4 +92,4 @@ def diferenca(a, b) -> Conjunto:  # diferenca usando função
 
 # FALTA CRIAR AS FUNÇÕES:
 # d) conjunto das partes do conjunto A
-# e) produto cartesiano dos conjuntos A e B (também vale para o mesmo conjunto)
+# e) produto cartesiano dos conjuntos A e B (também vale para o mesmo conjunto) (A * B)
