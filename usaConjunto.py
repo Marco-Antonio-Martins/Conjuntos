@@ -67,6 +67,11 @@ def testaDiferenca():
     print(B-A)
 
 
+def testeConjuntoDasPartes():
+    print(conjuntoDasPartes(A))
+    print(conjuntoDasPartes(B))
+
+
 # EXECUTANDO TESTES
 testaVerElementos()
 testaPertinencia()
@@ -75,3 +80,4 @@ testaIgualdade()
 testaUniao()
 testaIntersecao()
 testaDiferenca()
+testeConjuntoDasPartes()

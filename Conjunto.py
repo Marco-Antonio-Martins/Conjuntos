@@ -13,8 +13,8 @@ class Conjunto:
         if len(self) > 0:
             ret = "{"
             for elemento in self.__elementos:
-                ret += str(elemento) + ","
-            ret = ret[:-1]
+                ret += str(elemento) + ", "
+            ret = ret[:-2]
             ret += "}"
             return ret
         else:
@@ -90,6 +90,14 @@ def diferenca(a, b) -> Conjunto:  # diferenca usando função
     return Conjunto(retornoDiferenca)
 
 
-# FALTA CRIAR AS FUNÇÕES:
-# d) conjunto das partes do conjunto A
+def conjuntoDasPartes(A):
+    B = len(A)
+    elementos = [elemento for elemento in A]
+    ps = []
+    for i in range(2 ** B):
+        w = f'{i:0{B}b}'
+        q = [elementos[j] for j, bit in enumerate(w) if bit == '1']
+        ps.append(Conjunto(q))
+    return Conjunto(ps)
+
 # e) produto cartesiano dos conjuntos A e B (também vale para o mesmo conjunto) (A * B)
