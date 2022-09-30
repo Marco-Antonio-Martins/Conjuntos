@@ -1,5 +1,13 @@
 class Conjunto:
     def __init__(self, elementos: list = []) -> None:  # usar args pra aceitar
+        """Adiciona os elementos no conjunto conforme os valores recebidos 
+
+        Args:
+            elementos (list, optional): _description_. Defaults to []. ALTERAR APOR *args
+
+        Raises:
+            ValueError: Caso o usuário passe algo diferente de uma lista como parâmetro do conjunto 
+        """
         self.__elementos = elementos
 
         if not isinstance(elementos, list):
@@ -7,9 +15,19 @@ class Conjunto:
 
     @property
     def elementos(self) -> list:
+        """Permite o usuário a acessar os elementos (privados) do conjunto 
+
+        Returns:
+            list: Elementos do conjunto em uma lista
+        """
         return self.__elementos
 
     def __str__(self) -> str:
+        """Retorna os elementos do conjunto formatados no padrão {elemento_1, elemento_2, ..., elemento_n}
+
+        Returns:
+            str: Elementos formatados conforme padrão citado acima
+        """
         if len(self) > 0:
             ret = "{"
             for elemento in self.__elementos:
@@ -21,6 +39,14 @@ class Conjunto:
             return "{} - CONJUNTO VAZIO"
 
     def __getitem__(self, posicao):
+        """Método mágico que possibilita pegar o elemento de uma posição específica de um Conjunto, sem precisar passar (Conjunto.elementos)
+
+        Args:
+            posicao (int): Posição solicitada 
+
+        Returns:
+            int: elemento na posição solicitada
+        """
         return self.__elementos[posicao]
 
     def __iter__(self):
@@ -40,6 +66,10 @@ class Conjunto:
 
     def __sub__(self, conjunto):
         return diferenca(self, conjunto)  # diferença usando '-'
+
+    def __mul__(self, conjunto):
+        # produto cartesiano usando '*'
+        return produtoCartesiano(self, conjunto)
 
     def possui(self, elemento) -> bool:  # pertinência
         if elemento in self.__elementos:
@@ -99,5 +129,13 @@ def conjuntoDasPartes(A):
         q = [elementos[j] for j, bit in enumerate(w) if bit == '1']
         ps.append(Conjunto(q))
     return Conjunto(ps)
+
+
+def produtoCartesiano(A, B):
+    lista_retorno = []
+    for elemento_de_a in A:
+        for elemento_de_b in B:
+            lista_retorno.append(Conjunto([elemento_de_a, elemento_de_b]))
+    return Conjunto(lista_retorno)
 
 # e) produto cartesiano dos conjuntos A e B (também vale para o mesmo conjunto) (A * B)

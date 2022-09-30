@@ -65,11 +65,21 @@ def testaDiferenca():
     print(diferenca(A, B))
     print('A diferença entre o conjunto B e A (B-A) é')
     print(B-A)
+    print('-'*50)
 
 
 def testeConjuntoDasPartes():
     print(conjuntoDasPartes(A))
     print(conjuntoDasPartes(B))
+    print('-'*50)
+
+
+def testeProdutoCartesiano():
+    print(f'Conjunto A: {A}')
+    print(f'Conjunto B: {B}')
+    print(f'Conjunto C: {C}')
+    print(f'Produto Cartesiano de B e C é: {produtoCartesiano(B, C)}')
+    print(f'Produto Cartesiano de A e C é: {A * C}')
 
 
 # EXECUTANDO TESTES
@@ -81,3 +91,4 @@ testaUniao()
 testaIntersecao()
 testaDiferenca()
 testeConjuntoDasPartes()
+testeProdutoCartesiano()
