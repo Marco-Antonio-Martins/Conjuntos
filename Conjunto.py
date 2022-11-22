@@ -137,5 +137,3 @@ def produtoCartesiano(A, B):
         for elemento_de_b in B:
             lista_retorno.append(Conjunto([elemento_de_a, elemento_de_b]))
     return Conjunto(lista_retorno)
-
-# e) produto cartesiano dos conjuntos A e B (também vale para o mesmo conjunto) (A * B)

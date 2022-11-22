@@ -69,7 +69,9 @@ def testaDiferenca():
 
 
 def testeConjuntoDasPartes():
-    print(conjuntoDasPartes(A))
+    print("O conjunto das partes de A é")
+    print(conjuntoDasPartes(A), end="\n\n")
+    print("O conjunto das partes de B é")
     print(conjuntoDasPartes(B))
     print('-'*50)
 
