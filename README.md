@@ -1,4 +1,4 @@
-<h1>Classe para representar Conjuntos e suas funcionalidades</h1>
+<h1>Biblioteca para representar Conjuntos e suas funcionalidades</h1>
 
 > Status: Processo de finalização
 
