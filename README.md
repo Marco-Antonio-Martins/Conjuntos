@@ -2,7 +2,7 @@
 
 > Status: Processo de finalização
 
-<h3 style="text-align: justify; margin: 1.3em 0">Esse projeto é uma biblioteca criada como resposta à uma atividade da matéria de Linguagens Formais e Teoria da Computação, ministrada pelo professor <a href="https://github.com/jacksongomesbr">Jackson Gomes</a>, com o intuito de representar um Conjunto e suas funcionalidades usando classes do Python.</h3>
+<h3 style="text-align: justify; margin: 1.3em 0">Esse projeto surge como resposta à uma atividade da matéria de Linguagens Formais e Teoria da Computação, ministrada pelo professor <a href="https://github.com/jacksongomesbr">Jackson Gomes</a>, com o objetivo de representar conjuntos matemáticos e suas operações, utilizando um tipo de dado criado com classes do Python.</h3>
 
 <h3>Recursos a serem desenvolvidos:</h3>
 
